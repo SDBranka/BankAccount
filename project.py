@@ -56,6 +56,7 @@ class BankAccount:
 
     def display_account_info(self):             #print to the console: eg. "Balance: $100"
         print(f"Balance: ${self.balance}")
+        return self
 
     def yield_interest(self):           #increases the account balance by the current balance * the interest rate (as long as the balance is positive)
         if self.balance > 0:
@@ -64,9 +65,7 @@ class BankAccount:
 
 
 alpha = BankAccount()
-alpha.deposit(50).deposit(50).deposit(50).withdraw(14).yield_interest()
-alpha.display_account_info()
+alpha.deposit(50).deposit(50).deposit(50).withdraw(14).yield_interest().display_account_info()
 
 beta = BankAccount(20, 0.05)
-beta.deposit(50).deposit(59).withdraw(5).withdraw(1).withdraw(4).withdraw(1).yield_interest()
-beta.display_account_info()
+beta.deposit(50).deposit(59).withdraw(5).withdraw(1).withdraw(4).withdraw(1).yield_interest().display_account_info()
